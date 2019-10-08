@@ -27,10 +27,11 @@ public class Main {
 
         System.out.println("Path content: ");
         JSONArray array = new JSONArray();
-        JSONObject object = new JSONObject();
 
         for (File f : files) {
             String formatted = simpleDateFormat.format(new Date(attributes.creationTime().toMillis()));
+
+            JSONObject object = new JSONObject();
             object.put("Filename", f.getName());
             object.put("Size", f.length() + " bytes");
             object.put("Creation date", formatted);
